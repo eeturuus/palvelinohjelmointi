@@ -2,6 +2,7 @@ package fi.haagahelia.course.domain;
 
 import javax.persistence.*;
 
+@Table(name="usertable") // deploymentin takia koska user nimeä ei saa olla
 @Entity
 public class User {
     @Id
