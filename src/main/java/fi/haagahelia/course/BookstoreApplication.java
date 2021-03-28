@@ -43,7 +43,7 @@ public class BookstoreApplication {
 			crepository.save(new Category("Crime"));
 			crepository.save(new Category("Non-Fiction"));
 			
-			repository.deleteAll();
+			//repository.deleteAll();
 			repository.save(new Book("Ernest Hemingway", "A Farewell to Arms", 1929, "1232323-21", 19.90, crepository.findByName("Classics").get(0)));
 			repository.save(new Book("George Orwell", "Animal Farm", 1945, "2212343-5", 24.90, crepository.findByName("Classics").get(0)));
 			userRepository.deleteAll();
