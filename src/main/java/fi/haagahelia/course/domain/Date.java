@@ -10,28 +10,28 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Category {
+public class Date {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-	private Long categoryid;
+	private Long dateid;
 	private String name;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
-	private List<Book> books;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "date")
+	private List<Booking> books;
 	
-	public Category() {}
+	public Date() {}
 	
-	public Category(String name) {
+	public Date(String name) {
 		super();
 		this.name = name;
 	}
 	
-	public Long getCategoryid() {
-		return categoryid;
+	public Long getDateid() {
+		return dateid;
 	}
 	
-	public void setCategoryid(Long categoryid) {
-		this.categoryid = categoryid;
+	public void setDateid(Long dateid) {
+		this.dateid = dateid;
 	}
 	
 	public String getName() {
@@ -42,16 +42,16 @@ public class Category {
 		this.name = name;
 	}
 
-	public List<Book> getBooks() {
+	public List<Booking> getBooks() {
 		return books;
 	}
 
-	public void setBooks(List<Book> books) {
+	public void setBooks(List<Booking> books) {
 		this.books = books;
 	}
 
 	@Override
 	public String toString() {
-		return "Category [categoryid=" + categoryid + ", name=" + name + "]";
+		return "Date [dateid=" + dateid + ", name=" + name + "]";
 	}
 }

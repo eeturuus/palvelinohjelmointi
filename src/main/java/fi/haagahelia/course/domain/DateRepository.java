@@ -6,8 +6,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource
-public interface CategoryRepository extends CrudRepository<Category, Long> {
+public interface DateRepository extends CrudRepository<Date, Long> {
 
-    List<Category> findByName(@Param("name") String name);
+    List<Date> findByName(@Param("name") String name);
     
 }

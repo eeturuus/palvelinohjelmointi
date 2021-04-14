@@ -4,12 +4,12 @@
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"
 	th:href="@{css/bootstrap.min.css}" />
 
-<title>Booklist</title>
+<title>Bookinglist</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 </head>
 <body>
-	<h1>Bookstore</h1>
+	<h1>Mokki varauslista</h1>
 	<div class="col-md-4" style="padding:20px 0">
 		<form th:action="@{/logout}" method="post">
 			<input type="submit" value="Sign Out" class="btn btn-sm btn-danger"/>
@@ -18,30 +18,26 @@
 	<table class="table table-hover">
 		<thead>
 			<tr>
-				<th>Author</th>
-				<th>Title</th>
-				<th>ISBN</th>
-				<th>Year</th>
-				<th>Category</th>
+				<th>Date</th>
+				<th>Username</th>
+				<th>Comment</th>
 				<th sec:authorize="hasRole('ADMIN')"> </th>
 			</tr>
 		</thead>
 
 
 		<tbody>
-			<tr th:each="book : ${books}">
-				<td th:text="${book.author}"></td>
-				<td th:text="${book.title}"></td>
-				<td th:text="${book.isbn}"></td>
-				<td th:text="${book.year}"></td>
-				<td th:text="${book.category.name}"></td> 
-				<td sec:authorize="hasRole('ADMIN')"><a class="btn btn-danger" th:href="@{/delete/{id}(id=${book.id})}">Delete</a></td>
+			<tr th:each="booking : ${bookings}">
+				<td th:text="${booking.date}"></td>
+				<td th:text="${booking.uname}"></td>
+				<td th:text="${booking.comment}"></td>
+				<td sec:authorize="hasRole('ADMIN')"><a class="btn btn-danger" th:href="@{/delete/{id}(id=${booking.id})}">Delete</a></td>
 				<td><a class="btn btn-primary"
-					th:href="@{/modify/{id}(id=${book.id})}">Edit</a></td>
+					th:href="@{/modify/{id}(id=${booking.id})}">Edit</a></td>
 			</tr>
 		</tbody>
 	</table>
 
-	<a class="btn btn-success" href="/add">Add Book</a>
+	<a class="btn btn-success" href="/add">Lisää varaus</a>
 </body>
 </html>

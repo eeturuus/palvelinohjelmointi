@@ -13,9 +13,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 
-import fi.haagahelia.course.domain.Book;
-import fi.haagahelia.course.domain.Category;
-import fi.haagahelia.course.web.BookController;
+import fi.haagahelia.course.domain.Booking;
+import fi.haagahelia.course.domain.Date;
+import fi.haagahelia.course.web.BookingController;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
@@ -23,7 +23,7 @@ import fi.haagahelia.course.web.BookController;
 public class BookListApplicationTests {
 
 	@Autowired
-	private BookController controller;
+	private BookingController controller;
 	
 	@Test
 	public void contextLoads() {
